@@ -10,6 +10,10 @@ from flask_wtf import Form
 def index():
     return render_template("base.html")
 
+@app.get("/success")
+def success():
+    return render_template("success.html")
+
 
 @app.get("/register_username")
 def username_get():
@@ -48,6 +52,6 @@ def password_post():
     )
     form: Form
     if form.validate():
-        return redirect(url_for("index"))
+        return redirect(url_for("success"))
     print(f"{form.errors=}")
     return render_template("password.html", form=form)
