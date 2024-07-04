@@ -4,14 +4,14 @@ from flask import flash, request, render_template, Request, redirect, url_for
 from flask_wtf import Form
 
 
-
-
 @app.get("/")
 def index():
     return render_template("base.html")
 
+
 @app.get("/success")
 def success():
+
     return render_template("success.html")
 
 
@@ -19,9 +19,6 @@ def success():
 def username_get():
     form = UserNameForm(request.form)
     return render_template("username.html", form=form)
-
-
-
 
 
 @app.post("/register_username")
@@ -40,9 +37,6 @@ def username_post():
 def password_get():
     form = PasswordForm(request.form)
     return render_template("password.html", form=form)
-
-
-
 
 
 @app.post("/register_password")
